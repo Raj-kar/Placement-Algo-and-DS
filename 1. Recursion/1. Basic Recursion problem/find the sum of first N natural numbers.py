@@ -1,26 +1,19 @@
-''' 
-Iterative Solution
-'''
+def sum_of_natural(num):
+    '''Using Iterative approatch '''
+    res = 0
+    for i in range(1, num+1):
+        res += i
+    return res
 
 
-def sumOfNatural(n):
-    sum = 0
-    for i in range(1, n+1):
-        sum += i
-    return sum
+print(sum_of_natural(10))
 
 
-print(sumOfNatural(10))
-
-''' 
-Recursive Solution
-'''
-
-
-def sumOfNatural2(n):
-    if (n == 1):
+def sum_of_natural_2(num):
+    '''Recursive Solution'''
+    if num == 1:
         return 1
-    return sumOfNatural(n - 1) + n
-    
+    return sum_of_natural_2(num - 1) + num
 
-print(sumOfNatural2(10))
+
+print(sum_of_natural_2(10))
