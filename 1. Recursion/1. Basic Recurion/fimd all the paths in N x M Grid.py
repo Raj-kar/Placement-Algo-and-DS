@@ -7,4 +7,4 @@ def path(row, column):
 
 print(path(4, 4))   # 20
 print(path(200, 1))  # 1
-print(path(2, 2))
+print(path(2, 2))   # 2
