@@ -20,8 +20,7 @@ Recursive Solution
 def sumOfNatural2(n):
     if (n == 1):
         return 1
-    else:
-        return sumOfNatural(n - 1) + n
+    return sumOfNatural(n - 1) + n
     
 
 print(sumOfNatural2(10))
