@@ -7,10 +7,35 @@ return how much rainwater can be trpped .
 
 
 def rainwater(arr):
-    pass
+    total, maxLeft, maxRight = 0, 0, 0
+    p = 0
+    pL, pR = p - 1, p + 1
+
+    while p < len(arr):
+        if pR > len(arr) - 1 and pL < 0:
+
+            current_water = min(maxLeft, maxRight) - arr[p]
+            if current_water > 0:
+                total += current_water
+
+            p += 1
+            pL, pR = p - 1, p + 1
+            maxLeft, maxRight = 0, 0
+
+        if pL > -1:
+            maxLeft = max(maxLeft, arr[pL])
+        if pR < len(arr):
+            maxRight = max(maxRight, arr[pR])
+        pL -= 1
+        pR += 1
+
+    return total
 
 
-print(rainwater([0, 1, 0, 2, 1, 0, 3, 1, 0, 1, 2]))
+print(rainwater([0, 1, 0, 2, 1, 0, 3, 1, 0, 1, 2]))  # 8
+print(rainwater([5, 0, 3, 0, 0, 0, 2, 3, 4, 2, 1]))  # 20
+print(rainwater([3, 4, 3]))  # 0
+print(rainwater([4, 2, 0, 3, 2, 5]))
 
 '''
 constrains -->
